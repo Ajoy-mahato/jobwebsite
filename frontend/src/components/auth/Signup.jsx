@@ -81,10 +81,13 @@ const Signup = () => {
       toast.error(error.response.data.message);
     }finally{
       dispatch(setLoading(false))
-    }
-  
-    
+    } 
   }
+  useEffect(()=>{
+    if(user){
+      navigate("/")
+    }
+  })
   return (
     <>
       <div>

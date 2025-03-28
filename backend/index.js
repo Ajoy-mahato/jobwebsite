@@ -12,7 +12,9 @@ import path from "path";
 dotenv.config({})
 
 const app=express();
+
 const _dirname=path.resolve();
+
 // app.get("/home",(req,res)=>{
 //   return res.status(200).json({
 //    message:"i am coming from backend",
@@ -44,6 +46,7 @@ app.use(express.static(path.join(_dirname,"/frontend/dist",)))
 app.get("*",(_,res)=>{
     res.sendFile(path.resolve(_dirname,"frontend","dist","index.html"))
 })
+
 app.listen(port,()=>{
     connectDb();
     console.log(`listenning port ${port}`)

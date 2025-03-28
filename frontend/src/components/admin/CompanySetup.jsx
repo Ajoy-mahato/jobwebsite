@@ -20,11 +20,10 @@ const CompanySetup = () => {
     description: "",
     website: "",
     location: "",
-    file: null,
+    file:null,
   });
 
   const {singleCompany}= useSelector(store=>store.company)
-
   const navigate=useNavigate()
   const [loading,setLoading]=useState(false);
   const changeEventHandler = (e) => {
@@ -34,7 +33,6 @@ const CompanySetup = () => {
     const file=e.target.files?.[0];
     setInput({...input,file});
   }
-
   const submitHandler= async (e)=>{
     e.preventDefault();
     const formData=new FormData();
@@ -46,18 +44,25 @@ const CompanySetup = () => {
         formData.append("file",input.file)
     }
     
-    // cheking formData
+   // cheking formData
     // for (const value of formData.values()) {
     //   console.log(value);
     // }
+    const userData = {
+      id: 123,
+      name: 'John Doe',
+      age: 30
+    };
+    // formData.forEach(value=>console.log(value));
 
     try{
         setLoading(true)
-    const res=await axios.put(`${COMPANY_API_END_POINT}/update/${params.id}`,formData,{
-    headers:{'Content-Type':"multipart/form-data"},
-    withCredentials:true
-})
-
+    const res=await axios.put(`${COMPANY_API_END_POINT}/update/${params.id}`,
+    formData
+      ,{
+    headers:{'Content-Type':'multipart/form-data'},
+    withCredentials: true
+    })
 
 if(res.data.success){
     toast.success(res.data.message)

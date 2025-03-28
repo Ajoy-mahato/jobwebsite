@@ -12,7 +12,6 @@ const useGetCompanyById = (companyId) => {
           const res=await axios.get(`${COMPANY_API_END_POINT}/get/${companyId}`,{withCredentials:true})
          
           if(res.data.success){
-            
                dispatch(setSingleCompany(res.data.company))
           }
             }catch(error){

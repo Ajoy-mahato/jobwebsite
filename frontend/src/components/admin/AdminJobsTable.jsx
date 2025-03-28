@@ -15,11 +15,11 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const AdminJobsTable = () => {
-  const {allAdminJobs,searchJobByText}=useSelector(store=>store.job)
-  const [filterJobs,setFilterJobs]=useState(allAdminJobs);
+  const {allAdminJob,searchJobByText}=useSelector(store=>store.job)
+  const [filterJobs,setFilterJobs]=useState(allAdminJob);
   const navigate=useNavigate();
   useEffect(()=>{
-const filteredJob=allAdminJobs.length >= 0 && allAdminJobs.filter((job)=>{
+const filteredJob=allAdminJob.length >= 0 && allAdminJob.filter((job)=>{
   if(!searchJobByText){
     return true
   };
@@ -28,7 +28,7 @@ return job?.title?.toLowerCase().includes(searchJobByText.toLowerCase()) || job?
 
 
 setFilterJobs(filteredJob)
-  },[allAdminJobs,searchJobByText])
+  },[allAdminJob,searchJobByText])
   return (
     <div>
       <Table>

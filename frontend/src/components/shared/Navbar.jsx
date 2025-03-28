@@ -6,8 +6,8 @@ import { LogOut, User2 } from 'lucide-react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
-import { USER_API_END_POINT } from '@/utils/constant'
-import { setUser } from '@/redux/authSlice'
+import { USER_API_END_POINT } from '../../../utils/constant'
+import { setUser } from '../../../redux/authSlice'
 import { toast } from 'sonner'
 
 const Navbar = () => {
@@ -73,7 +73,7 @@ const Navbar = () => {
                                                 <AvatarImage src={user?.profile?.profilePhoto} alt="@shadcn" />
                                             </Avatar>
                                             <div>
-                                                <h4 className='font-medium'>{user?.fullname}</h4>
+                                                <h4 className='font-medium'>{user?.fullName}</h4>
                                                 <p className='text-sm text-muted-foreground'>{user?.profile?.bio}</p>
                                             </div>
                                         </div>
