@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../shared/Navbar";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setLoading } from "../../../redux/authSlice.js";
 
 const Signup = () => {
+  const { user } = useSelector((store) => store.auth);
   const [input, setInput] = useState({
     fullName: "",
     email: "",
