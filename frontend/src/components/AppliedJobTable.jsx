@@ -3,9 +3,11 @@ import React from 'react'
 import { TableBody, TableCell } from './ui/table'
 import { Badge } from './ui/badge'
 import { useSelector } from 'react-redux'
+import useGetAppliedJobs from '@/hooks/useGetAppliedJobs'
 
 const AppliedJobTable = () => {
     const {allAppliedJobs} = useSelector(store=>store.job);
+    useGetAppliedJobs();
   return (
     <div>
      <Table>

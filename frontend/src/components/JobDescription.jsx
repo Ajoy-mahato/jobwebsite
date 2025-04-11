@@ -42,7 +42,7 @@ if(res.data.success){
       if(res.data.success){
 
         dispatch(setSingleJob(res.data.job))
-        setIsApplied(res.data.job.application.some(application=>application===user?._id))
+        setIsApplied(res.data.job.application.some(application=>application.applicant===user?._id))
       }
      }catch(error){
       console.log(error)
