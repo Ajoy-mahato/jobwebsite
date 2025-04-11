@@ -6,8 +6,9 @@ import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import { setSearchCompanyByText } from '../../../redux/companySlice';
 import AdminJobsTable from './AdminJobsTable';
-import useGetAllAdminJobs from '@/hooks/UseGetAllAdminJobs';
+// import useGetAllAdminJobs from '@/hooks/UseGetAllAdminJobs';
 import { setSearchJobByText } from '../../../redux/jobSlice';
+import useGetAllAdminJobs from '@/hooks/useGetAllAdminJobs';
 
 const AdminJobs = () => {
   useGetAllAdminJobs();
