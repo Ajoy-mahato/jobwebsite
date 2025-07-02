@@ -83,7 +83,7 @@ useEffect(()=>{
             <Label>Email</Label>
             <Input
               type="email"
-              placeholder="ajoy123@gmail.com"
+              placeholder="Enter your email address"
               name="email"
               value={input.email}
               onChange={changeEventHandler}
